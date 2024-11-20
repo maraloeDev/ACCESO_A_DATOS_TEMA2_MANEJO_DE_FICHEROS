@@ -1,201 +1,75 @@
-                                 Apache License
-                           Version 2.0, January 2004
-                        http://www.apache.org/licenses/
+Licencia de Acceso a Datos
+Versión 1.0, Noviembre 2024
+http://www.gregoriofer.com/licenses/ADL-1.0
+TÉRMINOS Y CONDICIONES PARA USO, REPRODUCCIÓN Y DISTRIBUCIÓN
+1. Definiciones
 
-   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+"Licencia" significa los términos y condiciones para uso, reproducción y distribución definidos en las Secciones 1 a 9 de este documento.
+"Licenciante" significa el Centro de Enseñanza Concertada "Gregorio Fernández", el propietario de los derechos de autor o la entidad autorizada por este para otorgar la Licencia.
+"Contribuyente" significa cualquier individuo o entidad autorizada a contribuir al proyecto "2ºDAM Acceso a Datos UT2 Reto Grupal".
+"Tú" (o "Tu") significa un individuo o Entidad Legal que ejerce los permisos otorgados por esta Licencia.
+"Trabajo" significa la aplicación web basada en Java para el manejo de archivos (RDF, XLS, CSV, JSON, XML) creada bajo este proyecto.
+"Trabajos Derivados" significa cualquier trabajo basado en el Trabajo, para el cual las modificaciones representan un trabajo original de autoría.
 
-   1. Definitions.
+2. Concesión de Licencia de Derechos de Autor
 
-      "License" shall mean the terms and conditions for use, reproduction,
-      and distribution as defined by Sections 1 through 9 of this document.
+Sujeto a los términos y condiciones de esta Licencia, el Licenciante te otorga una licencia no exclusiva, libre de regalías e irrevocable para usar, reproducir y distribuir el Trabajo y cualquier Trabajo Derivado, siempre que:  
 
-      "Licensor" shall mean the copyright owner or entity authorized by
-      the copyright owner that is granting the License.
+(a) Conserves esta Licencia en todas las copias o Trabajos Derivados;  
+(b) Garantices la atribución a los contribuyentes originales: Eduardo Martín-Sonseca, Sergio Maturana, Guillermo Barros, David Cabeza, y Viacheslav Sabaiev;  
+(c) Incluyas una referencia clara al Licenciante y a la URL de esta Licencia en todas las copias.
 
-      "Legal Entity" shall mean the union of the acting entity and all
-      other entities that control, are controlled by, or are under common
-      control with that entity. For the purposes of this definition,
-      "control" means (i) the power, direct or indirect, to cause the
-      direction or management of such entity, whether by contract or
-      otherwise, or (ii) ownership of fifty percent (50%) or more of the
-      outstanding shares, or (iii) beneficial ownership of such entity.
+3. Redistribución
 
-      "You" (or "Your") shall mean an individual or Legal Entity
-      exercising permissions granted by this License.
+La redistribución del Trabajo o Trabajos Derivados está permitida bajo las siguientes condiciones:  
 
-      "Source" form shall mean the preferred form for making modifications,
-      including but not limited to software source code, documentation
-      source, and configuration files.
+(a) Todas las copias redistribuidas deben conservar esta Licencia e incluir la atribución adecuada a los autores originales y al Licenciante;  
+(b) Los archivos modificados deben incluir un aviso que indique los cambios realizados y la persona responsable de dichas modificaciones;  
+(c) Cualquier manejo de errores o funcionalidad adicional no debe violar la intención original de la aplicación.
 
-      "Object" form shall mean any form resulting from mechanical
-      transformation or translation of a Source form, including but
-      not limited to compiled object code, generated documentation,
-      and conversions to other media types.
+4. Responsabilidades
 
-      "Work" shall mean the work of authorship, whether in Source or
-      Object form, made available under the License, as indicated by a
-      copyright notice that is included in or attached to the work
-      (an example is provided in the Appendix below).
+4.1. Aseguramiento de la Calidad: Tú eres responsable de garantizar que el Trabajo o los Trabajos Derivados funcionen sin errores lógicos o de compilación.  
 
-      "Derivative Works" shall mean any work, whether in Source or Object
-      form, that is based on (or derived from) the Work and for which the
-      editorial revisions, annotations, elaborations, or other modifications
-      represent, as a whole, an original work of authorship. For the purposes
-      of this License, Derivative Works shall not include works that remain
-      separable from, or merely link (or bind by name) to the interfaces of,
-      the Work and Derivative Works thereof.
+4.2. Integridad de los Datos: La aplicación debe usar fuentes de datos confiables relevantes para los Objetivos de Desarrollo Sostenible (ODS).
 
-      "Contribution" shall mean any work of authorship, including
-      the original version of the Work and any modifications or additions
-      to that Work or Derivative Works thereof, that is intentionally
-      submitted to Licensor for inclusion in the Work by the copyright owner
-      or by an individual or Legal Entity authorized to submit on behalf of
-      the copyright owner. For the purposes of this definition, "submitted"
-      means any form of electronic, verbal, or written communication sent
-      to the Licensor or its representatives, including but not limited to
-      communication on electronic mailing lists, source code control systems,
-      and issue tracking systems that are managed by, or on behalf of, the
-      Licensor for the purpose of discussing and improving the Work, but
-      excluding communication that is conspicuously marked or otherwise
-      designated in writing by the copyright owner as "Not a Contribution."
+5. Presentación de Contribuciones
 
-      "Contributor" shall mean Licensor and any individual or Legal Entity
-      on behalf of whom a Contribution has been received by Licensor and
-      subsequently incorporated within the Work.
+Todas las contribuciones realizadas al proyecto se consideran bajo esta Licencia, salvo que se indique explícitamente lo contrario. Las contribuciones deben incluir un diagrama de Gantt y un enlace a GitHub para evaluación.
 
-   2. Grant of Copyright License. Subject to the terms and conditions of
-      this License, each Contributor hereby grants to You a perpetual,
-      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
-      copyright license to reproduce, prepare Derivative Works of,
-      publicly display, publicly perform, sublicense, and distribute the
-      Work and such Derivative Works in Source or Object form.
+6. Renuncia de Garantías
 
-   3. Grant of Patent License. Subject to the terms and conditions of
-      this License, each Contributor hereby grants to You a perpetual,
-      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
-      (except as stated in this section) patent license to make, have made,
-      use, offer to sell, sell, import, and otherwise transfer the Work,
-      where such license applies only to those patent claims licensable
-      by such Contributor that are necessarily infringed by their
-      Contribution(s) alone or by combination of their Contribution(s)
-      with the Work to which such Contribution(s) was submitted. If You
-      institute patent litigation against any entity (including a
-      cross-claim or counterclaim in a lawsuit) alleging that the Work
-      or a Contribution incorporated within the Work constitutes direct
-      or contributory patent infringement, then any patent licenses
-      granted to You under this License for that Work shall terminate
-      as of the date such litigation is filed.
+El Trabajo se proporciona "TAL CUAL", sin garantía de ningún tipo. El Licenciante rechaza cualquier garantía implícita, incluidas, entre otras, las garantías de comerciabilidad o idoneidad para un propósito particular.
 
-   4. Redistribution. You may reproduce and distribute copies of the
-      Work or Derivative Works thereof in any medium, with or without
-      modifications, and in Source or Object form, provided that You
-      meet the following conditions:
+7. Limitación de Responsabilidad
 
-      (a) You must give any other recipients of the Work or
-          Derivative Works a copy of this License; and
+Bajo ninguna circunstancia el Licenciante o los Contribuyentes serán responsables de cualquier daño derivado del uso o la incapacidad de usar el Trabajo, incluidos, entre otros, pérdida de datos o interrupción del negocio.
 
-      (b) You must cause any modified files to carry prominent notices
-          stating that You changed the files; and
+8. Marcas Registradas
 
-      (c) You must retain, in the Source form of any Derivative Works
-          that You distribute, all copyright, patent, trademark, and
-          attribution notices from the Source form of the Work,
-          excluding those notices that do not pertain to any part of
-          the Derivative Works; and
+Esta Licencia no otorga permiso para usar las marcas registradas, logotipos o nombres de servicio del Licenciante, excepto cuando sea necesario para cumplir con esta Licencia.
 
-      (d) If the Work includes a "NOTICE" text file as part of its
-          distribution, then any Derivative Works that You distribute must
-          include a readable copy of the attribution notices contained
-          within such NOTICE file, excluding those notices that do not
-          pertain to any part of the Derivative Works, in at least one
-          of the following places: within a NOTICE text file distributed
-          as part of the Derivative Works; within the Source form or
-          documentation, if provided along with the Derivative Works; or,
-          within a display generated by the Derivative Works, if and
-          wherever such third-party notices normally appear. The contents
-          of the NOTICE file are for informational purposes only and
-          do not modify the License. You may add Your own attribution
-          notices within Derivative Works that You distribute, alongside
-          or as an addendum to the NOTICE text from the Work, provided
-          that such additional attribution notices cannot be construed
-          as modifying the License.
+9. Terminación
 
-      You may add Your own copyright statement to Your modifications and
-      may provide additional or different license terms and conditions
-      for use, reproduction, or distribution of Your modifications, or
-      for any such Derivative Works as a whole, provided Your use,
-      reproduction, and distribution of the Work otherwise complies with
-      the conditions stated in this License.
+Esta Licencia se terminará si violas alguno de sus términos.
 
-   5. Submission of Contributions. Unless You explicitly state otherwise,
-      any Contribution intentionally submitted for inclusion in the Work
-      by You to the Licensor shall be under the terms and conditions of
-      this License, without any additional terms or conditions.
-      Notwithstanding the above, nothing herein shall supersede or modify
-      the terms of any separate license agreement you may have executed
-      with Licensor regarding such Contributions.
+FIN DE LOS TÉRMINOS Y CONDICIONES
+Apéndice: Cómo aplicar esta Licencia a tu proyecto
 
-   6. Trademarks. This License does not grant permission to use the trade
-      names, trademarks, service marks, or product names of the Licensor,
-      except as required for reasonable and customary use in describing the
-      origin of the Work and reproducing the content of the NOTICE file.
+Para aplicar esta Licencia a tu trabajo, incluye el siguiente aviso:
 
-   7. Disclaimer of Warranty. Unless required by applicable law or
-      agreed to in writing, Licensor provides the Work (and each
-      Contributor provides its Contributions) on an "AS IS" BASIS,
-      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
-      implied, including, without limitation, any warranties or conditions
-      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
-      PARTICULAR PURPOSE. You are solely responsible for determining the
-      appropriateness of using or redistributing the Work and assume any
-      risks associated with Your exercise of permissions under this License.
+Copyright 2024 Centro de Enseñanza Concertada "Gregorio Fernández"  
+Contribuyentes: Eduardo Martín-Sonseca, Sergio Maturana, Guillermo Barros, David Cabeza, Viacheslav Sabaiev  
 
-   8. Limitation of Liability. In no event and under no legal theory,
-      whether in tort (including negligence), contract, or otherwise,
-      unless required by applicable law (such as deliberate and grossly
-      negligent acts) or agreed to in writing, shall any Contributor be
-      liable to You for damages, including any direct, indirect, special,
-      incidental, or consequential damages of any character arising as a
-      result of this License or out of the use or inability to use the
-      Work (including but not limited to damages for loss of goodwill,
-      work stoppage, computer failure or malfunction, or any and all
-      other commercial damages or losses), even if such Contributor
-      has been advised of the possibility of such damages.
+Licenciado bajo la Licencia de Acceso a Datos, Versión 1.0 (la "Licencia");  
+no puedes usar este archivo excepto en cumplimiento con la Licencia.  
+Puedes obtener una copia de la Licencia en  
 
-   9. Accepting Warranty or Additional Liability. While redistributing
-      the Work or Derivative Works thereof, You may choose to offer,
-      and charge a fee for, acceptance of support, warranty, indemnity,
-      or other liability obligations and/or rights consistent with this
-      License. However, in accepting such obligations, You may act only
-      on Your own behalf and on Your sole responsibility, not on behalf
-      of any other Contributor, and only if You agree to indemnify,
-      defend, and hold each Contributor harmless for any liability
-      incurred by, or claims asserted against, such Contributor by reason
-      of your accepting any such warranty or additional liability.
+    http://www.gregoriofer.com/licenses/ADL-1.0  
 
-   END OF TERMS AND CONDITIONS
+A menos que la ley aplicable lo requiera o se acuerde por escrito, el Trabajo  
+se distribuye bajo la Licencia en una base "TAL CUAL", SIN GARANTÍAS  
+O CONDICIONES DE NINGÚN TIPO, ya sean expresas o implícitas.  
+Consulta la Licencia para conocer el lenguaje específico que rige los permisos  
+y limitaciones bajo la Licencia.
 
-   APPENDIX: How to apply the Apache License to your work.
-
-      To apply the Apache License to your work, attach the following
-      boilerplate notice, with the fields enclosed by brackets "[]"
-      replaced with your own identifying information. (Don't include
-      the brackets!)  The text should be enclosed in the appropriate
-      comment syntax for the file format. We also recommend that a
-      file or class name and description of purpose be included on the
-      same "printed page" as the copyright notice for easier
-      identification within third-party archives.
-
-   Copyright [yyyy] [name of copyright owner]
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
