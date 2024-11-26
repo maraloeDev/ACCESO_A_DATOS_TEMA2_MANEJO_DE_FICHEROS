@@ -122,7 +122,7 @@ public class ServletFich extends HttpServlet {
         /**
          * Intento abrir y leer el archivo.
          */
-        try (FileInputStream archivo = new FileInputStream("C:\\Users\\Eduardo\\Desktop\\datosLeeidos.xls")) {
+        try (FileInputStream archivo = new FileInputStream("C:\\Users\\Eduardo\\Desktop\\ArchivoXLS.xls")) {
             /**
              * Creo un libro de trabajo (HSSFWorkbook) para utilizar el contenido del
              * archivo seleccionado en el FIS.
@@ -222,7 +222,7 @@ public class ServletFich extends HttpServlet {
 			 * Guardo el archivo.
 			 */
 			try (FileOutputStream salidaArchivo = new FileOutputStream(
-					"C:\\Users\\Eduardo\\Desktop\\datosEscritos.xls")) {
+					"C:\\Users\\Eduardo\\Desktop\\ArchivoXLS.xls")) {
 				libroDeTrabajo.write(salidaArchivo);
 			}
 		} catch (IOException excepcion) {
