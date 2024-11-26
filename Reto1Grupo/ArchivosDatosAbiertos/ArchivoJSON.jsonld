@@ -1,0 +1,241 @@
+{
+  "@context": {
+    "adms": "http://www.w3.org/ns/adms#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dct": "http://purl.org/dc/terms/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "gsp": "http://www.opengis.net/ont/geosparql#",
+    "locn": "http://www.w3.org/ns/locn#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "time": "http://www.w3.org/2006/time#",
+    "vcard": "http://www.w3.org/2006/vcard/ns#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://datos.gob.es/catalogo/a16003011-estadisticas-sobre-juventud-tasa-de-pobreza-real1/resource/7cd6524e-a7c6-4cc2-b1c9-dedb180cb6bf/format",
+      "@type": "dct:IMT",
+      "rdf:value": "text/csv",
+      "rdfs:label": "CSV"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/a16003011-estadisticas-sobre-juventud-tasa-de-pobreza-real1/Frequency",
+      "@type": "dct:Frequency",
+      "rdf:value": {
+        "@id": "https://datos.gob.es/catalogo/a16003011-estadisticas-sobre-juventud-tasa-de-pobreza-real1/DurationDescription"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/a16003011-estadisticas-sobre-juventud-tasa-de-pobreza-real1",
+      "@type": "dcat:Dataset",
+      "dcat:distribution": [
+        {
+          "@id": "https://datos.gob.es/catalogo/a16003011-estadisticas-sobre-juventud-tasa-de-pobreza-real1/resource/a7ae03f9-613c-4da5-a83b-be722bc3c6b1"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/a16003011-estadisticas-sobre-juventud-tasa-de-pobreza-real1/resource/7cd6524e-a7c6-4cc2-b1c9-dedb180cb6bf"
+        }
+      ],
+      "dcat:keyword": [
+        {
+          "@language": "eu",
+          "@value": "gazteaukera"
+        },
+        {
+          "@language": "es",
+          "@value": "juventud"
+        },
+        {
+          "@language": "eu",
+          "@value": "gazteen euskal behatokia"
+        },
+        {
+          "@language": "es",
+          "@value": "gazteaukera"
+        },
+        {
+          "@language": "eu",
+          "@value": "euskal gazteria"
+        },
+        {
+          "@language": "eu",
+          "@value": "gazteei buruzko estatistikak"
+        },
+        {
+          "@language": "es",
+          "@value": "observatorio vasco de la juventud"
+        },
+        {
+          "@language": "es",
+          "@value": "juventud vasca"
+        },
+        {
+          "@language": "eu",
+          "@value": "gazteriaren panoramika"
+        },
+        {
+          "@language": "es",
+          "@value": "estadísticas juventud"
+        },
+        {
+          "@language": "es",
+          "@value": "panorámica juventud"
+        },
+        {
+          "@language": "eu",
+          "@value": "gazteak"
+        }
+      ],
+      "dcat:theme": [
+        {
+          "@id": "http://datos.gob.es/kos/sector-publico/sector/cultura-ocio"
+        },
+        {
+          "@id": "http://datos.gob.es/kos/sector-publico/sector/sociedad-bienestar"
+        },
+        {
+          "@id": "http://datos.gob.es/kos/sector-publico/sector/demografia"
+        }
+      ],
+      "dct:accrualPeriodicity": {
+        "@id": "https://datos.gob.es/catalogo/a16003011-estadisticas-sobre-juventud-tasa-de-pobreza-real1/Frequency"
+      },
+      "dct:description": [
+        {
+          "@language": "eu",
+          "@value": "Gazteen Euskal Behatokia gazteria zertan den eta zein bide daraman, horixe momentu oro eta orokorrean jakiteko balio du. Tresna bat da beraz, administrazioek gazteria dela-eta egiten dituzten ekintzek zein eragin duten balioesteko aukera emango diguna.Gazteen Euskal Behatokiak Euskadi.eus-en kontsulta daitezkeen 100 adierazle baino gehiago publikatzen ditu aldizka, bestelako ikerketa eta txostenekin batera. Estatistikak formatu desberdinetan eskaintzen ditugu (Excel, csv)."
+        },
+        {
+          "@language": "es",
+          "@value": "El Observatorio Vasco de la Juventud es un instrumento del Gobierno Vasco que permite disponer de una visión global y permanente de la situación y evolución del mundo juvenil que permita evaluar el impacto de las actuaciones llevadas a cabo en la CAPV por las diferentes Administraciones en materia de juventud.El Observatorio Vasco de la Juventud publica regularmente más de 100 indicadores estadísticos que se pueden consultar en euskadi.eus, junto a otras investigaciones e informes. Las estadísticas se ofrecen en diversos formatos (csv, excel)."
+        }
+      ],
+      "dct:identifier": "https://opendata.euskadi.eus/catalogo/-/estadisticas-sobre-juventud-tasa-de-pobreza-real/",
+      "dct:issued": {
+        "@type": "xsd:dateTime",
+        "@value": "2020-03-02T00:00:00+01:00"
+      },
+      "dct:language": [
+        "eu",
+        "es"
+      ],
+      "dct:license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "dct:modified": {
+        "@type": "xsd:dateTime",
+        "@value": "2020-03-02T00:00:00+01:00"
+      },
+      "dct:publisher": {
+        "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/A16003011"
+      },
+      "dct:references": [
+        {
+          "@id": "http://www.gazteaukera.euskadi.eus/estadisticas-juventud"
+        },
+        {
+          "@id": "http://www.gazteaukera.euskadi.net/r58-7650x/es/estatistikak/temasV1.apl?idioma=c&ambito=1"
+        },
+        {
+          "@id": "https://opendata.euskadi.eus/catalogo/-/estadisticas-sobre-juventud-tasa-de-pobreza-real/"
+        }
+      ],
+      "dct:spatial": {
+        "@id": "http://datos.gob.es/recurso/sector-publico/territorio/Autonomia/Pais-Vasco"
+      },
+      "dct:temporal": {
+        "@id": "https://datos.gob.es/catalogo/a16003011-estadisticas-sobre-juventud-tasa-de-pobreza-real1/PeriodOfTime-1"
+      },
+      "dct:title": [
+        {
+          "@language": "es",
+          "@value": "Estadísticas sobre juventud: Tasa de pobreza real"
+        },
+        {
+          "@language": "eu",
+          "@value": "Gazteriari buruzko estatistikoak: Pobrezia errealaren tasa"
+        }
+      ]
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/a16003011-estadisticas-sobre-juventud-tasa-de-pobreza-real1/resource/a7ae03f9-613c-4da5-a83b-be722bc3c6b1/format",
+      "@type": "dct:IMT",
+      "rdf:value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "rdfs:label": "XLSX"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/a16003011-estadisticas-sobre-juventud-tasa-de-pobreza-real1/resource/a7ae03f9-613c-4da5-a83b-be722bc3c6b1",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://opendata.euskadi.eus/contenidos/estadistica/obsjuv_spc_3_4_3/es_def/adjuntos/historical_xls.xlsx",
+      "dcat:byteSize": {
+        "@type": "xsd:decimal",
+        "@value": "8745"
+      },
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/a16003011-estadisticas-sobre-juventud-tasa-de-pobreza-real1/resource/a7ae03f9-613c-4da5-a83b-be722bc3c6b1/format"
+      },
+      "dct:title": [
+        {
+          "@language": "es",
+          "@value": "Histórico"
+        },
+        {
+          "@language": "eu",
+          "@value": "Historikoa"
+        }
+      ]
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/a16003011-estadisticas-sobre-juventud-tasa-de-pobreza-real1/PeriodOfTime-1",
+      "@type": "dct:PeriodOfTime",
+      "schema:endDate": {
+        "@type": "xsd:dateTime",
+        "@value": "2018-12-31T00:00:00+01:00"
+      },
+      "schema:startDate": {
+        "@type": "xsd:dateTime",
+        "@value": "1996-01-01T00:00:00+01:00"
+      }
+    },
+    {
+      "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/A16003011",
+      "@type": "skos:Concept",
+      "skos:notation": "A16003011",
+      "skos:prefLabel": "Comunidad Autónoma de País Vasco"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/a16003011-estadisticas-sobre-juventud-tasa-de-pobreza-real1/DurationDescription",
+      "@type": "time:DurationDescription",
+      "time:years": {
+        "@type": "xsd:decimal",
+        "@value": "1"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/a16003011-estadisticas-sobre-juventud-tasa-de-pobreza-real1/resource/7cd6524e-a7c6-4cc2-b1c9-dedb180cb6bf",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://opendata.euskadi.eus/contenidos/estadistica/obsjuv_spc_3_4_3/es_def/adjuntos/historical_csv.zip",
+      "dcat:byteSize": {
+        "@type": "xsd:decimal",
+        "@value": "1270"
+      },
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/a16003011-estadisticas-sobre-juventud-tasa-de-pobreza-real1/resource/7cd6524e-a7c6-4cc2-b1c9-dedb180cb6bf/format"
+      },
+      "dct:title": [
+        {
+          "@language": "eu",
+          "@value": "Historikoa"
+        },
+        {
+          "@language": "es",
+          "@value": "Histórico"
+        }
+      ]
+    }
+  ]
+}
