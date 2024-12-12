@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -251,28 +252,73 @@ public class ServletFich extends HttpServlet {
 	}
 	
 	private void LeerXML(){
-		try {
-			File f = new File("");
+try {
 			
-			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-			Document doc = dBuilder.parse(f);
-			
-			doc.getDocumentElement();
-			
-			NodeList nodel = doc.getElementsByTagName("EAD:unittitle");
-			
-			for (int i = 0; i < nodel.getLength(); i++) {
-				Node n = nodel.item(i);
-				if(n.getNodeType() == Node.ELEMENT_NODE) {
-					Element elemento = (Element)n;
-					
-				}
-			}
-			
+			// Guardo todos los datos en un Array bidimencional
+		    ArrayList<ArrayList<String>> asr = new ArrayList<>();
+		    File f = new File("src/main/resources/datos.xml"); 
+
+		    DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+		    DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+		    Document doc = dBuilder.parse(f);
+
+		    doc.getDocumentElement().normalize();
+
+		    NodeList nodel = doc.getElementsByTagName("EAD:c");
+		    
+		    asr.add(new ArrayList<String>() {{ add("unittitle");add("unittitle");add("unittitle");add("unittitle");
+		    									add("unittitle");add("unittitle");add("unittitle");add("unittitle");
+		    									add("unittitle");add("unittitle");add("unittitle");add("unittitle");}});
+
+		    for (int i = 0; i < nodel.getLength(); i++) {
+		        ArrayList<String> as = new ArrayList<>();
+		        Node n = nodel.item(i);
+
+		        if (n.getNodeType() == Node.ELEMENT_NODE) {
+		            Element elemento = (Element) n;
+
+		            NodeList did = elemento.getElementsByTagName("EAD:did");
+		            if (did.getLength() > 0) {
+		            	as.add(did.item(0).getTextContent().substring(0,16));
+		                as.add(did.item(0).getTextContent().substring(16));
+		            }
+		            NodeList controlAccess = elemento.getElementsByTagName("EAD:controlaccess");
+		            if (controlAccess.getLength() > 0) {
+		            	NodeList ast = (NodeList) controlAccess.item(0);
+		            	for (int j = 0; j < ast.getLength(); j++) {
+							as.add(ast.item(j).getTextContent());
+						}
+		            }
+		            
+		            NodeList accessRestrictList = elemento.getElementsByTagName("EAD:accessrestrict");
+		            if (accessRestrictList.getLength() > 0) {
+		            	for (int j = 0; j < accessRestrictList.getLength(); j++) {
+							as.add(accessRestrictList.item(j).getTextContent());
+						}
+		            }
+
+		            NodeList bioghistList = elemento.getElementsByTagName("EAD:bioghist");
+		            if (bioghistList.getLength() > 0) {
+		                as.add(bioghistList.item(0).getTextContent());
+		            }
+		            
+		            
+		            asr.add(as);
+		        }
+		    }
+
+		    // Imprimir los resultados
+		    for (ArrayList<String> strs : asr) {
+		        for (String string : strs) {
+		            System.out.println(string);
+		        }
+		    }
+
 		} catch (Exception e) {
-			// TODO: handle exception
+		    e.printStackTrace();
 		}
+
+
             
 	}
 	private void EscribirXML(){
@@ -286,6 +332,7 @@ public class ServletFich extends HttpServlet {
 			Element nel = doc.createElement("");
 			nel.setAttribute("lable", "");
 			nel.setTextContent("");
+			nel.appendChild(doc.createElement("").appendChild(doc.createElement("")));
 			
 			doc.getDocumentElement().appendChild(nel);
 			
