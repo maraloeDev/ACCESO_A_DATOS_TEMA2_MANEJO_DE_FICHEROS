@@ -21,10 +21,10 @@
             // Separar los datos por filas
             String[] filas = datosArchivo.split("\n");
     %>
-            <table>
+            <table border="2">
                 <thead>
                     <tr>
-                        <th>Celda</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>

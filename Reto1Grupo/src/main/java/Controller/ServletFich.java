@@ -127,7 +127,7 @@ public class ServletFich extends HttpServlet {
 
 	private void lecturaXLS(HttpServletRequest request) {
 		
-		File f = new File("C:\\Users\\Eduardo\\Desktop\\ACCESO_A_DATOS_TEMA2_MANEJO_DE_FICHEROS\\Reto1Grupo\\DatosAbiertos\\datos.xls");
+		File f = new File("C:\\Users\\Eduardo\\Desktop\\ACCESO_A_DATOS_TEMA2_MANEJO_DE_FICHEROS\\Reto1Grupo\\DatosAbiertos\\centros.xls");
         /**
          * Intento abrir y leer el archivo.
          */
@@ -213,26 +213,32 @@ public class ServletFich extends HttpServlet {
 			HSSFSheet hoja = libroDeTrabajo.createSheet("Datos");
 
 			/**
-			 * Creo la primera fila de la hoja.
+			 * Creo la primera fila para la cabecera.
 			 */
-			Row fila = hoja.createRow(0);
+			Row filaCabecera = hoja.createRow(0);
+			filaCabecera.createCell(0).setCellValue("DATO1");
+			filaCabecera.createCell(1).setCellValue("DATO2");
+			filaCabecera.createCell(2).setCellValue("DATO3");
+			filaCabecera.createCell(3).setCellValue("DATO4");
+			filaCabecera.createCell(4).setCellValue("DATO5");
+			filaCabecera.createCell(5).setCellValue("DATO6");
 
 			/**
-			 * Escribo los valores recibidos como parámetros en las celdas de la primera
-			 * fila.
+			 * Creo la segunda fila para los datos.
 			 */
-			fila.createCell(0).setCellValue(dato1);
-			fila.createCell(1).setCellValue(dato2);
-			fila.createCell(2).setCellValue(dato3);
-			fila.createCell(3).setCellValue(dato4);
-			fila.createCell(4).setCellValue(dato5);
-			fila.createCell(5).setCellValue(dato6);
+			Row filaDatos = hoja.createRow(1);
+			filaDatos.createCell(0).setCellValue(dato1);
+			filaDatos.createCell(1).setCellValue(dato2);
+			filaDatos.createCell(2).setCellValue(dato3);
+			filaDatos.createCell(3).setCellValue(dato4);
+			filaDatos.createCell(4).setCellValue(dato5);
+			filaDatos.createCell(5).setCellValue(dato6);
 
 			/**
 			 * Guardo el archivo.
 			 */
 			try (FileOutputStream salidaArchivo = new FileOutputStream(
-					"C:\\Users\\Eduardo\\Desktop\\ACCESO_A_DATOS_TEMA2_MANEJO_DE_FICHEROS\\Reto1Grupo\\DatosAbiertos\\datos.xls")) {
+					"C:\\Users\\Eduardo\\Desktop\\ACCESO_A_DATOS_TEMA2_MANEJO_DE_FICHEROS\\Reto1Grupo\\DatosAbiertos\\centros.xls")) {
 				libroDeTrabajo.write(salidaArchivo);
 			}
 		} catch (IOException excepcion) {
@@ -243,4 +249,5 @@ public class ServletFich extends HttpServlet {
 			request.setAttribute("error", "Error al escribir el archivo XLS: " + excepcion.getMessage());
 		}
 	}
+
 }
