@@ -21,7 +21,7 @@
 			<table>
 				<tr>
 					<td>
-						Fromato de fichero: 
+						Formato de fichero: 
 						<select name="fileTypes">
 							<option name="fileTypes" value="XLS">XLS</option>
 							<option name="fileTypes" value="CSV">CSV</option>

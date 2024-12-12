@@ -11,11 +11,15 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 
 @WebServlet("/ServletFich")
 public class ServletFich extends HttpServlet {
@@ -53,6 +57,8 @@ public class ServletFich extends HttpServlet {
 
 				case "XLS":
 					lecturaXLS(request);
+					request.getRequestDispatcher("lecturaXLS.jsp").forward(request, response);
+
 					break;
 
 				case "CSV":
@@ -121,7 +127,7 @@ public class ServletFich extends HttpServlet {
 
 	private void lecturaXLS(HttpServletRequest request) {
 		
-		File f = new File("C:\\Users\\Eduardo\\Desktop\\ACCESO_A_DATOS_TEMA2_MANEJO_DE_FICHEROS\\Reto1Grupo\\DatosAbiertos\\datos.xlsx");
+		File f = new File("C:\\Users\\Eduardo\\Desktop\\ACCESO_A_DATOS_TEMA2_MANEJO_DE_FICHEROS\\Reto1Grupo\\DatosAbiertos\\datos.xls");
         /**
          * Intento abrir y leer el archivo.
          */
@@ -130,16 +136,16 @@ public class ServletFich extends HttpServlet {
              * Creo un libro de trabajo (HSSFWorkbook) para utilizar el contenido del
              * archivo seleccionado en el FIS.
              */
-            HSSFWorkbook libroDeTrabajo = new HSSFWorkbook(archivo);
+            Workbook libroDeTrabajo = new HSSFWorkbook(archivo);
 
             /**
              * Obtengo la primera hoja del archivo a modificar.
              */
-            HSSFSheet hoja = libroDeTrabajo.getSheetAt(0);
+            Sheet hoja = libroDeTrabajo.getSheetAt(0);
+            
 
-            /**
-             * Creo el objeto SB para crear una cadena para almacenar los datos leídos.
-             */
+            // * Creo el objeto SB para crear una cadena para almacenar los datos leídos.
+             
             StringBuilder datos = new StringBuilder();
 
             /**
@@ -180,11 +186,12 @@ public class ServletFich extends HttpServlet {
                  */
                 datos.append("\n");
             }
-
+ 
             /**
              * Añado los datos leídos como atributo en la solicitud.
              */
             request.setAttribute("datosArchivo", datos.toString());
+            libroDeTrabajo.close();
         } catch (IOException excepcion) {
             /**
              * En caso de error al leer el archivo, establece un mensaje de error como
@@ -225,7 +232,7 @@ public class ServletFich extends HttpServlet {
 			 * Guardo el archivo.
 			 */
 			try (FileOutputStream salidaArchivo = new FileOutputStream(
-					"C:\\Users\\Eduardo\\Desktop\\ACCESO_A_DATOS_TEMA2_MANEJO_DE_FICHEROS\\Reto1Grupo\\DatosAbiertos\\datos.xlsx")) {
+					"C:\\Users\\Eduardo\\Desktop\\ACCESO_A_DATOS_TEMA2_MANEJO_DE_FICHEROS\\Reto1Grupo\\DatosAbiertos\\datos.xls")) {
 				libroDeTrabajo.write(salidaArchivo);
 			}
 		} catch (IOException excepcion) {
