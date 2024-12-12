@@ -25,10 +25,15 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
+import org.w3c.dom.Attr;
+import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.w3c.dom.TypeInfo;
+import org.w3c.dom.UserDataHandler;
 
 
 
@@ -252,7 +257,7 @@ public class ServletFich extends HttpServlet {
 	}
 	
 	private void LeerXML(){
-try {
+			try {
 			
 			// Guardo todos los datos en un Array bidimencional
 		    ArrayList<ArrayList<String>> asr = new ArrayList<>();
@@ -321,20 +326,21 @@ try {
 
             
 	}
-	private void EscribirXML(){
+	private void EscribirXML(String dato1, String dato2, String dato3, String dato4, String dato5, String dato6){
 		try {
+			ArrayList<String> sstr = new ArrayList<String>() {{add(dato1);add(dato2);add(dato3);add(dato4);add(dato5);add(dato6);}};
 			File f = new File("");
 			
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			Document doc = dBuilder.parse(f);
 			
-			Element nel = doc.createElement("");
-			nel.setAttribute("lable", "");
-			nel.setTextContent("");
-			nel.appendChild(doc.createElement("").appendChild(doc.createElement("")));
-			
-			doc.getDocumentElement().appendChild(nel);
+			for (int i = 0; i < sstr.size(); i++) {
+				Element nel1 = doc.createElement("DataAd");
+				nel1.setAttribute("lable", "");
+				nel1.setTextContent(sstr.get(i));
+				doc.getDocumentElement().appendChild(nel1);
+			}
 			
 			TransformerFactory tf = TransformerFactory.newInstance();
 			Transformer t = tf.newTransformer();
