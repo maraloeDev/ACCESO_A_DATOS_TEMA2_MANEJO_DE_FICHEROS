@@ -119,4 +119,121 @@ public class ServletFich extends HttpServlet {
 		request.getRequestDispatcher(page).forward(request, response);
 	}
 
+	private void lecturaXLS(HttpServletRequest request) {
+		
+		File f = new File("C:\\Users\\Eduardo\\Desktop\\ACCESO_A_DATOS_TEMA2_MANEJO_DE_FICHEROS\\Reto1Grupo\\DatosAbiertos\\datos.xlsx");
+        /**
+         * Intento abrir y leer el archivo.
+         */
+        try (FileInputStream archivo = new FileInputStream(f)) {
+            /**
+             * Creo un libro de trabajo (HSSFWorkbook) para utilizar el contenido del
+             * archivo seleccionado en el FIS.
+             */
+            HSSFWorkbook libroDeTrabajo = new HSSFWorkbook(archivo);
+
+            /**
+             * Obtengo la primera hoja del archivo a modificar.
+             */
+            HSSFSheet hoja = libroDeTrabajo.getSheetAt(0);
+
+            /**
+             * Creo el objeto SB para crear una cadena para almacenar los datos leídos.
+             */
+            StringBuilder datos = new StringBuilder();
+
+            /**
+             * Recorro cada fila de la hoja.
+             */
+            for (Row fila : hoja) {
+                /**
+                 * Recorro cada celda de la fila.
+                 */
+                for (Cell celda : fila) {
+                    /**
+                     * Localizo el tipo de la celda para extraer el valor.
+                     */
+                    switch (celda.getCellType()) {
+                        /**
+                         * Si la celda contiene texto, se obtiene el texto de esa celda y lo añado al SB
+                         * de datos, seguido de un espacio.
+                         */
+                        case STRING:
+                            datos.append(celda.getStringCellValue()).append(" ");
+                            break;
+
+                        /**
+                         * Si la celda contiene un número, se obtiene el valor numérico y lo añado al SB
+                         * de datos, seguido de un espacio.
+                         */
+                        case NUMERIC:
+                            datos.append(celda.getNumericCellValue()).append(" ");
+                            break;
+                        default:
+                            datos.append("DESCONOCIDO ");
+                            break;
+                    }
+                }
+                /**
+                 * Añado un salto de línea al final de cada fila, para que no aparezca todo
+                 * junto (DATO1, DATO2, DATO3... ).
+                 */
+                datos.append("\n");
+            }
+
+            /**
+             * Añado los datos leídos como atributo en la solicitud.
+             */
+            request.setAttribute("datosArchivo", datos.toString());
+        } catch (IOException excepcion) {
+            /**
+             * En caso de error al leer el archivo, establece un mensaje de error como
+             * atributo en la solicitud.
+             */
+            request.setAttribute("error", "Error al leer el archivo XLS: " + excepcion.getMessage());
+        }
+    }
+
+	private void escrituraXLS(String dato1, String dato2, String dato3, String dato4, String dato5, String dato6,
+			HttpServletRequest request) {
+		/**
+		 * Creo y escribe datos en un nuevo archivo XLS.
+		 */
+		try (HSSFWorkbook libroDeTrabajo = new HSSFWorkbook()) {
+			/**
+			 * Creo una nueva hoja en el archivo XLS.
+			 */
+			HSSFSheet hoja = libroDeTrabajo.createSheet("Datos");
+
+			/**
+			 * Creo la primera fila de la hoja.
+			 */
+			Row fila = hoja.createRow(0);
+
+			/**
+			 * Escribo los valores recibidos como parámetros en las celdas de la primera
+			 * fila.
+			 */
+			fila.createCell(0).setCellValue(dato1);
+			fila.createCell(1).setCellValue(dato2);
+			fila.createCell(2).setCellValue(dato3);
+			fila.createCell(3).setCellValue(dato4);
+			fila.createCell(4).setCellValue(dato5);
+			fila.createCell(5).setCellValue(dato6);
+
+			/**
+			 * Guardo el archivo.
+			 */
+			try (FileOutputStream salidaArchivo = new FileOutputStream(
+					"C:\\Users\\Eduardo\\Desktop\\ACCESO_A_DATOS_TEMA2_MANEJO_DE_FICHEROS\\Reto1Grupo\\DatosAbiertos\\datos.xlsx")) {
+				libroDeTrabajo.write(salidaArchivo);
+			}
+		} catch (IOException excepcion) {
+			/**
+			 * Si se produce un error al escribir el archivo, se muestra un mensaje de error
+			 * como atributo en la solicitud.
+			 */
+			request.setAttribute("error", "Error al escribir el archivo XLS: " + excepcion.getMessage());
+		}
+	}
 }
