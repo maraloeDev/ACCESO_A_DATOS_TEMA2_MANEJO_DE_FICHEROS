@@ -7,14 +7,30 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+
+
 
 @WebServlet("/ServletFich")
 public class ServletFich extends HttpServlet {
@@ -233,4 +249,57 @@ public class ServletFich extends HttpServlet {
 			request.setAttribute("error", "Error al escribir el archivo XLS: " + excepcion.getMessage());
 		}
 	}
+	
+	private void LeerXML(){
+		try {
+			File f = new File("");
+			
+			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			Document doc = dBuilder.parse(f);
+			
+			doc.getDocumentElement();
+			
+			NodeList nodel = doc.getElementsByTagName("EAD:unittitle");
+			
+			for (int i = 0; i < nodel.getLength(); i++) {
+				Node n = nodel.item(i);
+				if(n.getNodeType() == Node.ELEMENT_NODE) {
+					Element elemento = (Element)n;
+					
+				}
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+            
+	}
+	private void EscribirXML(){
+		try {
+			File f = new File("");
+			
+			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			Document doc = dBuilder.parse(f);
+			
+			Element nel = doc.createElement("");
+			nel.setAttribute("lable", "");
+			nel.setTextContent("");
+			
+			doc.getDocumentElement().appendChild(nel);
+			
+			TransformerFactory tf = TransformerFactory.newInstance();
+			Transformer t = tf.newTransformer();
+			DOMSource source = new DOMSource(doc);
+			StreamResult sr = new StreamResult(f);
+			t.setOutputProperty(OutputKeys.INDENT, "yes");
+			t.transform(source, sr);
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	
 }
