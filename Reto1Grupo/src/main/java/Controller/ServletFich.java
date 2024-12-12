@@ -266,9 +266,9 @@ try {
 
 		    NodeList nodel = doc.getElementsByTagName("EAD:c");
 		    
-		    asr.add(new ArrayList<String>() {{ add("unittitle");add("unittitle");add("unittitle");add("unittitle");
-		    									add("unittitle");add("unittitle");add("unittitle");add("unittitle");
-		    									add("unittitle");add("unittitle");add("unittitle");add("unittitle");}});
+		    asr.add(new ArrayList<String>() {{ add("unittitle");add("creationPeriod");add("author");add("status");
+		    									add("subject");add("accessRestrictionsPeriod");add("usagePermission");add("usagePermissionExpiringDate");
+		    									add("deathAuthor");add("Dokument:unittitle");add("dao");add("genreform");}});
 
 		    for (int i = 0; i < nodel.getLength(); i++) {
 		        ArrayList<String> as = new ArrayList<>();
