@@ -13,8 +13,12 @@
 		
 		<h1 style="color: red;text-align: center;">TIPO DE ERROR</h1>
 		
+		<hr>
+		
 		<% if (exception != null) {
 			exception.printStackTrace(new PrintWriter(out));
 		}%>
+		
+		<hr>
 	</body>
 </html>

@@ -58,21 +58,21 @@ public class ServletFich extends HttpServlet {
 			}else {
 				switch(request.getParameter("fileTypes")) {
 				case "XLS":
-				
 					
+					break;
 				case "CSV":
 				    readCSV(request);
 				    break;
 					
 				case "JSON":
 					
-					
+					break;
 				case "XML":
 
-					
+					break;
 				case "RDF":
 
-					
+					break;
 				}
 				page = "AccesoDatosA.jsp";
 			}
@@ -86,20 +86,20 @@ public class ServletFich extends HttpServlet {
 				switch(request.getParameter("fileTypes")) {
 				case "XLS":
 				
-				
+				break;
 				case "CSV":
 					writeCSV(fact1, fact2, fact3, fact4, fact5, fact6);
 					break;
 					
 				case "JSON":
 					
-				
+					break;
 				case "XML":
 					
-					
+					break;
 				case "RDF":
 					
-					
+					break;
 				}
 				page = "AccesoDatosA.jsp";
 			}
@@ -142,18 +142,20 @@ public class ServletFich extends HttpServlet {
 
 		File file = new File("C:\\Users\\matmense\\Desktop\\2DAM\\Acceso a Datos - Ruth\\workspaceEclipse\\Reto1Grupo\\DatosAbiertos\\datos.csv");
 
-		try {
-			// Escribir en el archivo CSV
-			FileWriter writer = new FileWriter(file, true);
-			for(int i = 1; i <= 6; i++) {
-				String fact = "fact" + i;
-				writer.append(fact);
-				writer.append(",");
-			}
+		try (FileWriter writer = new FileWriter(file, true)) {
+			writer.append(fact1);
+			writer.append(",");
+			writer.append(fact2);
+			writer.append(",");
+			writer.append(fact3);
+			writer.append(",");
+			writer.append(fact4);
+			writer.append(",");
+			writer.append(fact5);
+			writer.append(",");
+			writer.append(fact6);
 			writer.append("\n");
-			 
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
