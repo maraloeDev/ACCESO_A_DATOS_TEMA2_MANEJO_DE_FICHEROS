@@ -119,5 +119,4 @@ public class ServletFich extends HttpServlet {
 		request.getRequestDispatcher(page).forward(request, response);
 	}
 
-	
 }
