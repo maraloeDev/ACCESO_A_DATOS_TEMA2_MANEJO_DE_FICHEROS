@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -15,6 +16,8 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 
 @WebServlet("/ServletFich")
 public class ServletFich extends HttpServlet {
@@ -118,25 +121,27 @@ public class ServletFich extends HttpServlet {
 		request.getRequestDispatcher(page).forward(request, response);
 	}
 
-	private void lecturaXLS(HttpServletRequest request) {
+private void lecturaXLS(HttpServletRequest request) {
+		
+		File f = new File("C:\\Users\\Eduardo\\Desktop\\ACCESO_A_DATOS_TEMA2_MANEJO_DE_FICHEROS\\Reto1Grupo\\DatosAbiertos\\centros.xls");
         /**
          * Intento abrir y leer el archivo.
          */
-        try (FileInputStream archivo = new FileInputStream("C:\\Users\\Eduardo\\Desktop\\ArchivoXLS.xls")) {
+        try (FileInputStream archivo = new FileInputStream(f)) {
             /**
              * Creo un libro de trabajo (HSSFWorkbook) para utilizar el contenido del
              * archivo seleccionado en el FIS.
              */
-            HSSFWorkbook libroDeTrabajo = new HSSFWorkbook(archivo);
+            Workbook libroDeTrabajo = new HSSFWorkbook(archivo);
 
             /**
              * Obtengo la primera hoja del archivo a modificar.
              */
-            HSSFSheet hoja = libroDeTrabajo.getSheetAt(0);
+            Sheet hoja = libroDeTrabajo.getSheetAt(0);
+            
 
-            /**
-             * Creo el objeto SB para crear una cadena para almacenar los datos leídos.
-             */
+            // * Creo el objeto SB para crear una cadena para almacenar los datos leídos.
+             
             StringBuilder datos = new StringBuilder();
 
             /**
@@ -177,11 +182,12 @@ public class ServletFich extends HttpServlet {
                  */
                 datos.append("\n");
             }
-
+ 
             /**
              * Añado los datos leídos como atributo en la solicitud.
              */
             request.setAttribute("datosArchivo", datos.toString());
+            libroDeTrabajo.close();
         } catch (IOException excepcion) {
             /**
              * En caso de error al leer el archivo, establece un mensaje de error como
@@ -203,26 +209,32 @@ public class ServletFich extends HttpServlet {
 			HSSFSheet hoja = libroDeTrabajo.createSheet("Datos");
 
 			/**
-			 * Creo la primera fila de la hoja.
+			 * Creo la primera fila para la cabecera.
 			 */
-			Row fila = hoja.createRow(0);
+			Row filaCabecera = hoja.createRow(0);
+			filaCabecera.createCell(0).setCellValue("DATO1");
+			filaCabecera.createCell(1).setCellValue("DATO2");
+			filaCabecera.createCell(2).setCellValue("DATO3");
+			filaCabecera.createCell(3).setCellValue("DATO4");
+			filaCabecera.createCell(4).setCellValue("DATO5");
+			filaCabecera.createCell(5).setCellValue("DATO6");
 
 			/**
-			 * Escribo los valores recibidos como parámetros en las celdas de la primera
-			 * fila.
+			 * Creo la segunda fila para los datos.
 			 */
-			fila.createCell(0).setCellValue(dato1);
-			fila.createCell(1).setCellValue(dato2);
-			fila.createCell(2).setCellValue(dato3);
-			fila.createCell(3).setCellValue(dato4);
-			fila.createCell(4).setCellValue(dato5);
-			fila.createCell(5).setCellValue(dato6);
+			Row filaDatos = hoja.createRow(1);
+			filaDatos.createCell(0).setCellValue(dato1);
+			filaDatos.createCell(1).setCellValue(dato2);
+			filaDatos.createCell(2).setCellValue(dato3);
+			filaDatos.createCell(3).setCellValue(dato4);
+			filaDatos.createCell(4).setCellValue(dato5);
+			filaDatos.createCell(5).setCellValue(dato6);
 
 			/**
 			 * Guardo el archivo.
 			 */
 			try (FileOutputStream salidaArchivo = new FileOutputStream(
-					"C:\\Users\\Eduardo\\Desktop\\ArchivoXLS.xls")) {
+					"C:\\Users\\Eduardo\\Desktop\\ACCESO_A_DATOS_TEMA2_MANEJO_DE_FICHEROS\\Reto1Grupo\\DatosAbiertos\\centros.xls")) {
 				libroDeTrabajo.write(salidaArchivo);
 			}
 		} catch (IOException excepcion) {
