@@ -55,6 +55,7 @@ public class ServletFich extends HttpServlet {
 
 				case "XLS":
 					lecturaXLS(request);
+					request.getRequestDispatcher("lecturaXLS.jsp").forward(request, response);
 					break;
 
 				case "CSV":
@@ -123,7 +124,7 @@ public class ServletFich extends HttpServlet {
 
 private void lecturaXLS(HttpServletRequest request) {
 		
-		File f = new File("C:\\Users\\Eduardo\\Desktop\\ACCESO_A_DATOS_TEMA2_MANEJO_DE_FICHEROS\\Reto1Grupo\\DatosAbiertos\\centros.xls");
+		File f = new File("C:\\Users\\Eduardo\\Desktop\\ACCESO_A_DATOS_TEMA2_MANEJO_DE_FICHEROS\\Reto1Grupo\\DatosAbiertos\\datos.xlsx");
         /**
          * Intento abrir y leer el archivo.
          */
